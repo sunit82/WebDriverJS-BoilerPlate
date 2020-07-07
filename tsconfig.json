@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "es2017",
+      "module": "commonjs",
+      "strict": true,
+      "outDir": "dist",
+      "lib": [
+        "es2017"
+      ],
+      "types": [ "node", "mocha" ],
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true
+    }
+  }
