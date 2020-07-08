@@ -1,10 +1,10 @@
-import config from '../config';
+import { frameworkConfig } from '../lib/config';
 import { Browser, Page, findBy, Button, TextInput, elementIsVisible, WebComponent, WaitCondition } from '../lib';
 
 export class GooglePage extends Page {
     constructor(browser: Browser) {
       super(browser);
-      this.setUrl(`${config.googleUrl}/`);
+      this.setUrl(`${frameworkConfig.googleUrl}/`);
     }
 
     @findBy('[name=q]')

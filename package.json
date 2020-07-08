@@ -4,8 +4,8 @@
   "description": "test framework typescript + webdriverJS ",
   "main": "index",
   "scripts": {
-    "tests": "tsc && mocha --reporter mochawesome -t 2000000 dist/tests",
-    "test-single": "tsc && mocha --reporter mochawesome -t 2000000",
+    "tests": "rmdir /s /q dist && tsc && mocha --reporter mochawesome -t 2000000 dist/tests",
+    "test-single": "rmdir /s /q dist && tsc && mocha --reporter mochawesome -t 2000000",
     "lint": "eslint . --ext .ts --fix"
   },
   "author": "",

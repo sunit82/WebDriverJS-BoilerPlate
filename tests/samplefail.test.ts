@@ -1,7 +1,7 @@
 import { GooglePage } from "../pages";
+import { delay } from "../lib";
 import { assert } from 'chai';
-import { BrowserInstance } from './mocha-base'
-import { runInThisContext } from "vm";
+import { BrowserInstance } from '../lib/mocha-base'
 
 describe('Google page test that fails',  () => {
     let goolePage: GooglePage;
@@ -15,9 +15,9 @@ describe('Google page test that fails',  () => {
 
         const searchButtonValue = await goolePage.searchButton.getValue();
         // This assert will fail as Google search page wont' have "Yahoo Search" button.
-        assert(searchButtonValue === "Yahoo Search", "'Yahoo Search' button not found...");
+        // assert(searchButtonValue === "Yahoo Search", "'Yahoo Search' button not found...");
 
         // Below lines to do accessibility test. Commmented now as google page is failing the test.
-        // const results = await goolePage.accessibilityCheck();
+        const results = await goolePage.accessibilityCheck();
     });
 })

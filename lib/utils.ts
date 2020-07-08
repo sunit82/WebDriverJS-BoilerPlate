@@ -18,8 +18,8 @@ export function findBy(selector: string): Function {
   };
 }
 
-export enum Browsers {
-  Chrome="chrome",
-  Edge="edge",
-  Firefox="firefox"
+export const enum Browsers {
+  Chrome = "chrome",
+  Edge = "edge",
+  Firefox = "firefox"
 }

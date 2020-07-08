@@ -1,6 +1,6 @@
 import { Browser, WaitCondition } from './';
 import { AxeAnalysis } from './accessibility';
-import { accessibilityViolations } from '../tests/mocha-base';
+import { accessibilityViolations } from './mocha-base';
 import { assert } from 'chai';
 
 const axeBuilder = require('axe-webdriverjs');

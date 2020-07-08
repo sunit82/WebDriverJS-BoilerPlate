@@ -3,7 +3,7 @@ import { delay } from "../lib";
 import { Key } from "selenium-webdriver";
 import { ensure } from "../lib/ensure";
 import { assert } from 'chai';
-import { BrowserInstance } from './mocha-base'
+import { BrowserInstance } from '../lib/mocha-base'
 
 
 describe('Google page test that pass',  () => {
