@@ -1,9 +1,8 @@
 import 'chromedriver';
 import { Builder, ThenableWebDriver, By, WebElementPromise } from 'selenium-webdriver';
-import { WaitCondition, Browsers } from './';
+import { WaitCondition } from './';
 import * as fs from 'fs';
-
-const firefoxdriver = require('geckodriver'); // eslint-disable-line no-unused-vars
+const firefoxdriver = require('geckodriver');
 const edge = require("@microsoft/edge-selenium-tools");
 
 export class Browser {
@@ -11,23 +10,22 @@ export class Browser {
   private static instance: Browser;
 
   private constructor(browserName: string) {
-    if (browserName === Browsers.Edge) {
-      const options = new edge.Options();
-      options.setEdgeChromium(true);
+    if (browserName === "edge") {
+      let options = new edge.Options().setEdgeChromium(true);
       this.driver = edge.Driver.createSession(options);
       return;
     }
     this.driver = new Builder().forBrowser(browserName).build();
   }
 
-  public static getInstance(browserName = Browsers.Chrome): Browser {
+  public static getInstance(browserName = 'chrome') {
     if (!Browser.instance) {
       Browser.instance = new Browser(browserName);
     }
     return Browser.instance;
   }
 
-  public getDriver(): ThenableWebDriver {
+  public getDriver() {
     return this.driver;
   }
 
@@ -50,7 +48,7 @@ export class Browser {
     }
   }
 
-  public async wait(condition: WaitCondition): Promise<void> {
+  public async wait(condition: WaitCondition) {
     await this.waitAny(condition);
   }
 
@@ -75,12 +73,12 @@ export class Browser {
     await this.driver.quit();
   }
 
-  public saveScreenshot(filename: string): Promise<void> {
+  public saveScreenshot(filename: string) {
     return this.driver.takeScreenshot().then((data) => {
       fs.writeFile(filename, data, 'base64', (err) => {
         if (err) {
-          console.log("error", err); // eslint-disable-line no-console
-        }
+          console.log("error", err)
+        };
       });
     });
   }

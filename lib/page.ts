@@ -1,18 +1,15 @@
 import { Browser, WaitCondition } from './';
-import { AxeAnalysis } from './accessibility';
-import { accessibilityViolations } from './mocha-base';
-import { assert } from 'chai';
-
 const axeBuilder = require('axe-webdriverjs');
-const addContext = require('mochawesome/addContext');
 
 
-export type NewablePage<T extends Page> = new(browser: Browser) => T;
+export interface NewablePage<T extends Page> {
+  new(browser: Browser): T;
+}
 
 export abstract class Page {
   private url: string;
 
-  protected setUrl(url: string): void {
+  protected setUrl(url: string) {
     this.url = url;
   }
 
@@ -27,18 +24,12 @@ export abstract class Page {
       this.url = "";
   }
 
-  public async accessibilityCheck(): Promise<AxeAnalysis> {
+  public async accessibilityCheck(): Promise<any> {
     const driver = await this.browser.getDriver();
-    return axeBuilder(driver).analyze()
-    .then((result:AxeAnalysis) => {
-      if (result.violations.length) {
-        accessibilityViolations.push(...result.violations);
-      }
-      assert.equal(result.violations.length, 0);
-    });
+    return axeBuilder(driver).analyze();
   }
 
   public async dispose(): Promise<void>{
-    return this.browser.close();
+      this.browser.close();
   }
 }

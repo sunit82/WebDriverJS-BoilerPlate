@@ -48,10 +48,10 @@ class TextInputEnsurer extends WebComponentEnsurer {
 export function ensure(component: Button): ButtonEnsurer;
 export function ensure(component: TextInput): TextInputEnsurer;
 export function ensure(component: WebComponent): WebComponentEnsurer;
-export function ensure(component: WebComponent | Button): ButtonEnsurer | WebComponentEnsurer {
+export function ensure(component: WebComponent | Button): any {
     if (component instanceof Button) {
         return new ButtonEnsurer(component);
-    } else {
+    } else if (component instanceof WebComponent) {
         return new WebComponentEnsurer(component);
     }
 }

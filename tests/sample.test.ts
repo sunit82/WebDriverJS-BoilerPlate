@@ -3,12 +3,12 @@ import { delay } from "../lib";
 import { Key } from "selenium-webdriver";
 import { ensure } from "../lib/ensure";
 import { assert } from 'chai';
-import { BrowserInstance } from '../lib/mocha-base'
+import { BrowserInstance } from './mocha-base'
 
 
 describe('Google page test that pass',  () => {
     let goolePage: GooglePage;
-    before(() => {
+    before(async () => {
         goolePage = new GooglePage(BrowserInstance);
     });
 
@@ -27,6 +27,7 @@ describe('Google page test that pass',  () => {
         await goolePage.navigate();
         await goolePage.searchTextBox.enterText('my search criteria' + Key.ENTER);
 
+        await delay(2000);
         await Promise.all([
             ensure(goolePage.resultStats).isVisible()
         ]);

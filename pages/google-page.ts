@@ -1,10 +1,10 @@
-import { frameworkConfig } from '../lib/config';
-import { Browser, Page, findBy, Button, TextInput, elementIsVisible, WebComponent, WaitCondition } from '../lib';
+import config from '../config';
+import { Browser, Page, findBy, Button, TextInput, elementIsVisible, pageHasLoaded, WebComponent } from '../lib';
 
 export class GooglePage extends Page {
     constructor(browser: Browser) {
       super(browser);
-      this.setUrl(`${frameworkConfig.googleUrl}/`);
+      this.setUrl(`${config.googleUrl}/`);
     }
 
     @findBy('[name=q]')
@@ -13,7 +13,7 @@ export class GooglePage extends Page {
     @findBy('#result-stats')
     public resultStats!: WebComponent;
 
-    public loadCondition(): WaitCondition {
+    public loadCondition() {
         return elementIsVisible(() => this.searchTextBox);
     }
 
