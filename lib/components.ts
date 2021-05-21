@@ -3,7 +3,7 @@ import { WebElementPromise } from 'selenium-webdriver';
 export class WebComponent {
   constructor(protected element: WebElementPromise, public selector: string) { }
 
-  public async click(): Promise<void> {
+  public async click() {
     try {
       return await this.element.click();
     } catch (clickErr) {
@@ -15,7 +15,7 @@ export class WebComponent {
     }
   }
 
-  public async isDisplayed(): Promise<boolean> {
+  public async isDisplayed() {
     try {
       return await this.element.isDisplayed();
     } catch (ex) {
@@ -23,7 +23,7 @@ export class WebComponent {
     }
   }
 
-  public async getText(): Promise<string> {
+  public async getText() {
     return await this.element.getText();
   }
 }
@@ -33,7 +33,7 @@ export class Button extends WebComponent {
     super(element, selector);
   }
 
-  public async isDisabled(): Promise<boolean> {
+  public async isDisabled() {
     try {
       return await this.element.getAttribute('disabled') === 'disabled';
     } catch (ex) {
@@ -41,7 +41,7 @@ export class Button extends WebComponent {
     }
   }
 
-  public async getValue(): Promise<string> {
+  public async getValue() {
     return await (await this.element).getAttribute("value");
   }
 }
@@ -51,7 +51,7 @@ export class TextInput extends WebComponent {
     super(element, selector);
   }
 
-  public enterText(text: string): Promise<void> {
+  public enterText(text: string) {
     return this.element.sendKeys(text);
   }
 }
@@ -61,7 +61,7 @@ export class Anchor extends WebComponent {
     super(element, selector);
   }
 
-  public async getHref(): Promise<string> {
+  public async getHref() {
     return await (await this.element).getAttribute("href");
   }
 }

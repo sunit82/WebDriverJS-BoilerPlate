@@ -1,25 +1,19 @@
 import 'reflect-metadata';
 
-export const delay = (ms: number): Promise<unknown> => {
+export const delay = (ms: number) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-export function findBy(selector: string): Function {
+export function findBy(selector: string) {
   return (target: any, propertyKey: string) => {
     const type = Reflect.getMetadata('design:type', target, propertyKey);
     Object.defineProperty(target, propertyKey, {
         configurable: true,
         enumerable: true,
-        get() {
-          const promise = (this).browser.findElement(selector);
+        get: function() {
+          const promise = (this as any).browser.findElement(selector);
           return new type(promise, selector);
         },
     });
   };
-}
-
-export const enum Browsers {
-  Chrome = "chrome",
-  Edge = "edge",
-  Firefox = "firefox"
 }

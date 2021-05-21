@@ -120,7 +120,11 @@ module.exports = {
         "use-isnan": "error",
         "valid-typeof": "off",
         "react/jsx-uses-vars": 1,
-        "@typescript-eslint/interface-name-prefix": "off",
-        "@typescript-eslint/no-empty-interface": "error"
+        "@typescript-eslint/interface-name-prefix": [
+            "error",
+            {
+                "prefixWithI": "always"
+            }
+        ]
     }
 };

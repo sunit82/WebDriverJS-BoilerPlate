@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 1,
-    "start": "2020-07-07T13:53:20.815Z",
-    "end": "2020-07-07T13:53:43.156Z",
-    "duration": 22341,
+    "start": "2021-05-21T16:26:17.610Z",
+    "end": "2021-05-21T16:26:31.060Z",
+    "duration": 13450,
     "testsRegistered": 3,
     "passPercent": 66.66666666666666,
     "pendingPercent": 0,
@@ -18,45 +18,45 @@
   },
   "results": [
     {
-      "uuid": "f7a9c49f-2719-44e3-909a-a9e85f4e34d9",
+      "uuid": "95780ab9-4776-4eb9-bdb0-1295646026b1",
       "title": "",
       "fullFile": "",
       "file": "",
       "beforeHooks": [],
       "afterHooks": [
         {
-          "title": "\"after all\" hook",
-          "fullTitle": "\"after all\" hook",
+          "title": "\"after all\" hook in \"{root}\"",
+          "fullTitle": "\"after all\" hook in \"{root}\"",
           "timedOut": false,
-          "duration": 4337,
+          "duration": 1003,
           "state": null,
           "speed": null,
           "pass": false,
           "fail": false,
           "pending": false,
           "context": null,
-          "code": "await (await exports.BrowserInstance.getDriver()).close();\n// any action after all tests run.",
+          "code": "__awaiter(void 0, void 0, void 0, function* () {\n    yield (yield exports.BrowserInstance.getDriver()).close();\n    // any action after all tests run.\n})",
           "err": {},
-          "uuid": "9287abe9-5ddb-444e-8b1a-7f21bf5fb462",
-          "parentUUID": "f7a9c49f-2719-44e3-909a-a9e85f4e34d9",
+          "uuid": "59966b24-5a55-446b-8c84-8d314fe94cd4",
+          "parentUUID": "95780ab9-4776-4eb9-bdb0-1295646026b1",
           "isHook": true,
           "skipped": false
         },
         {
-          "title": "\"after each\" hook",
-          "fullTitle": "\"after each\" hook",
+          "title": "\"after each\" hook in \"{root}\"",
+          "fullTitle": "\"after each\" hook in \"{root}\"",
           "timedOut": false,
-          "duration": 329,
+          "duration": 54,
           "state": null,
           "speed": null,
           "pass": false,
           "fail": false,
           "pending": false,
           "context": null,
-          "code": "var _a;\nif (((_a = this.currentTest) === null || _a === void 0 ? void 0 : _a.state) === 'failed') {\n    await mkdirp(reportDir);\n    const screenshotFile = `${reportDir + Date.now().toString()}.png`;\n    exports.accessibilityViolations.length && exports.accessibilityViolations.map((violations, index) => {\n        if (violations.description) {\n            addContext(this, `Accessibility Violation [${(index + 1)}]:${violations.description}`);\n        }\n    });\n    exports.accessibilityViolations.splice(0, exports.accessibilityViolations.length);\n    addContext(this, `file:///${screenshotFile}`);\n    await exports.BrowserInstance.saveScreenshot(screenshotFile)\n        .then(() => {\n        // any action if test fails.\n    });\n}\nreturn;",
+          "code": "var _a;\nreturn __awaiter(this, void 0, void 0, function* () {\n    if (((_a = this.currentTest) === null || _a === void 0 ? void 0 : _a.state) === 'failed') {\n        yield mkdirp(reportDir);\n        let screenshotFile = reportDir + Date.now() + '.png';\n        addContext(this, 'file:///' + screenshotFile);\n        return exports.BrowserInstance.saveScreenshot(screenshotFile)\n            .then(() => {\n            // any action if test fails.\n        });\n    }\n    return;\n});",
           "err": {},
-          "uuid": "82731759-833e-4c1c-9f20-d04518b94e2d",
-          "parentUUID": "f7a9c49f-2719-44e3-909a-a9e85f4e34d9",
+          "uuid": "22d9a30a-a3ab-46cd-8895-248ed83001e8",
+          "parentUUID": "95780ab9-4776-4eb9-bdb0-1295646026b1",
           "isHook": true,
           "skipped": false
         }
@@ -64,26 +64,26 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "38117620-487b-4a71-9f11-c3d159b87e5a",
+          "uuid": "dd66d0d7-8cb3-4ac3-845b-cc0ac2ea5293",
           "title": "Google page test that pass",
-          "fullFile": "D:\\WebDriverJS-BoilerPlate\\dist\\tests\\sample.test.js",
+          "fullFile": "D:\\RnD\\testFrameworks\\WebDriverJS-Boilerplate\\dist\\tests\\sample.test.js",
           "file": "\\dist\\tests\\sample.test.js",
           "beforeHooks": [
             {
-              "title": "\"before all\" hook",
-              "fullTitle": "Google page test that pass \"before all\" hook",
+              "title": "\"before all\" hook in \"Google page test that pass\"",
+              "fullTitle": "Google page test that pass \"before all\" hook in \"Google page test that pass\"",
               "timedOut": false,
-              "duration": 0,
+              "duration": 1,
               "state": null,
               "speed": null,
               "pass": false,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "goolePage = new pages_1.GooglePage(mocha_base_1.BrowserInstance);",
+              "code": "__awaiter(void 0, void 0, void 0, function* () {\n        debugger;\n        goolePage = new pages_1.GooglePage(mocha_base_1.BrowserInstance);\n    })",
               "err": {},
-              "uuid": "30abc5f2-413b-4037-8ff1-35be9a5c9ea0",
-              "parentUUID": "38117620-487b-4a71-9f11-c3d159b87e5a",
+              "uuid": "386ba177-f5de-4f7f-8236-1fbbe0e30bab",
+              "parentUUID": "dd66d0d7-8cb3-4ac3-845b-cc0ac2ea5293",
               "isHook": true,
               "skipped": false
             }
@@ -94,17 +94,17 @@
               "title": "Verify elements on googel.com page",
               "fullTitle": "Google page test that pass Verify elements on googel.com page",
               "timedOut": false,
-              "duration": 11065,
+              "duration": 9029,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "await goolePage.navigate();\nconst searchButtonValue = await goolePage.searchButton.getValue();\nchai_1.assert(searchButtonValue === \"Google Search\", \"'Google Search' button not found.\");\nconst feelingLuckyButtonValue = await goolePage.feelingLuckyButton.getValue();\nchai_1.assert(feelingLuckyButtonValue === \"I'm Feeling Lucky\", \"'Feeling Lucky' button not found.\");",
+              "code": "__awaiter(void 0, void 0, void 0, function* () {\n        debugger;\n        yield goolePage.navigate();\n        const searchButtonValue = yield goolePage.searchButton.getValue();\n        chai_1.assert(searchButtonValue === \"Google Search\", \"'Google Search' button not found.\");\n        const feelingLuckyButtonValue = yield goolePage.feelingLuckyButton.getValue();\n        chai_1.assert(feelingLuckyButtonValue === \"I'm Feeling Lucky\", \"'Feeling Lucky' button not found.\");\n    })",
               "err": {},
-              "uuid": "5a9f134b-7291-4d56-b400-685ac6e0f2cf",
-              "parentUUID": "38117620-487b-4a71-9f11-c3d159b87e5a",
+              "uuid": "bb5cb39e-8c2b-4e3c-b409-442e47cab133",
+              "parentUUID": "dd66d0d7-8cb3-4ac3-845b-cc0ac2ea5293",
               "isHook": false,
               "skipped": false
             },
@@ -112,43 +112,43 @@
               "title": "Google a string and verfiy on results page",
               "fullTitle": "Google page test that pass Google a string and verfiy on results page",
               "timedOut": false,
-              "duration": 5747,
+              "duration": 2828,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "await goolePage.navigate();\nawait goolePage.searchTextBox.enterText('my search criteria' + selenium_webdriver_1.Key.ENTER);\nawait Promise.all([\n    ensure_1.ensure(goolePage.resultStats).isVisible()\n]);\n// Verify a string on google results page.\nconst resultStats = await goolePage.resultStats.getText();\nchai_1.assert(resultStats.startsWith(\"About\"), \"Results page not found\");",
+              "code": "__awaiter(void 0, void 0, void 0, function* () {\n        yield goolePage.navigate();\n        yield goolePage.searchTextBox.enterText('my search criteria' + selenium_webdriver_1.Key.ENTER);\n        yield lib_1.delay(2000);\n        yield Promise.all([\n            ensure_1.ensure(goolePage.resultStats).isVisible()\n        ]);\n        // Verify a string on google results page.\n        const resultStats = yield goolePage.resultStats.getText();\n        chai_1.assert(resultStats.startsWith(\"About\"), \"Results page not found\");\n    })",
               "err": {},
-              "uuid": "3390d77d-230a-42f1-932a-0dae67778672",
-              "parentUUID": "38117620-487b-4a71-9f11-c3d159b87e5a",
+              "uuid": "e548812c-ba5b-4f07-a812-3104ba511ddd",
+              "parentUUID": "dd66d0d7-8cb3-4ac3-845b-cc0ac2ea5293",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5a9f134b-7291-4d56-b400-685ac6e0f2cf",
-            "3390d77d-230a-42f1-932a-0dae67778672"
+            "bb5cb39e-8c2b-4e3c-b409-442e47cab133",
+            "e548812c-ba5b-4f07-a812-3104ba511ddd"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 16812,
+          "duration": 11857,
           "root": false,
           "rootEmpty": false,
-          "_timeout": 2000000
+          "_timeout": 20000
         },
         {
-          "uuid": "e6ad8e53-e1ac-4986-9aec-e4e43af4e972",
+          "uuid": "ed52b43f-9e85-4cb8-9d16-893cd540ac68",
           "title": "Google page test that fails",
-          "fullFile": "D:\\WebDriverJS-BoilerPlate\\dist\\tests\\samplefail.test.js",
+          "fullFile": "D:\\RnD\\testFrameworks\\WebDriverJS-Boilerplate\\dist\\tests\\samplefail.test.js",
           "file": "\\dist\\tests\\samplefail.test.js",
           "beforeHooks": [
             {
-              "title": "\"before all\" hook",
-              "fullTitle": "Google page test that fails \"before all\" hook",
+              "title": "\"before all\" hook in \"Google page test that fails\"",
+              "fullTitle": "Google page test that fails \"before all\" hook in \"Google page test that fails\"",
               "timedOut": false,
               "duration": 0,
               "state": null,
@@ -157,10 +157,10 @@
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "goolePage = new pages_1.GooglePage(mocha_base_1.BrowserInstance);",
+              "code": "__awaiter(void 0, void 0, void 0, function* () {\n        goolePage = new pages_1.GooglePage(mocha_base_1.BrowserInstance);\n    })",
               "err": {},
-              "uuid": "96b161a2-8a23-4bbf-95d6-b85c38d935b1",
-              "parentUUID": "e6ad8e53-e1ac-4986-9aec-e4e43af4e972",
+              "uuid": "d7a5a750-00a5-437d-8b5f-ace20ed738ee",
+              "parentUUID": "ed52b43f-9e85-4cb8-9d16-893cd540ac68",
               "isHook": true,
               "skipped": false
             }
@@ -168,24 +168,24 @@
           "afterHooks": [],
           "tests": [
             {
-              "title": "Googe page find Yahoo button and do accessibility check",
-              "fullTitle": "Google page test that fails Googe page find Yahoo button and do accessibility check",
+              "title": "Visit Azure Partner Portal",
+              "fullTitle": "Google page test that fails Visit Azure Partner Portal",
               "timedOut": false,
-              "duration": 837,
+              "duration": 516,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
-              "context": "\"file:///D:\\\\WebDriverJS-BoilerPlate\\\\dist\\\\mochawesome-report\\\\1594130018493.png\"",
-              "code": "await goolePage.navigate();\nconst searchButtonValue = await goolePage.searchButton.getValue();\n// This assert will fail as Google search page wont' have \"Yahoo Search\" button.\nchai_1.assert(searchButtonValue === \"Yahoo Search\", \"'Yahoo Search' button not found...\");\n// Below lines to do accessibility test. Commmented now as google page is failing the test.\n// const results = await goolePage.accessibilityCheck();",
+              "context": "\"file:///D:\\\\RnD\\\\testFrameworks\\\\WebDriverJS-Boilerplate\\\\dist\\\\mochawesome-report\\\\1621614390005.png\"",
+              "code": "__awaiter(void 0, void 0, void 0, function* () {\n        yield goolePage.navigate();\n        const searchButtonValue = yield goolePage.searchButton.getValue();\n        // This assert will fail as Google search page wont' have \"Yahoo Search\" button.\n        chai_1.assert(searchButtonValue === \"Yahoo Search\", \"'Google Search' button not found.\");\n        // Below lines to do accessibility test. Commmented now as google page is failing the test.\n        // const results = await page.accessibilityCheck();\n        // assert.equal(results.violations.length, 0);\n    })",
               "err": {
-                "message": "AssertionError: 'Yahoo Search' button not found...",
-                "estack": "AssertionError: 'Yahoo Search' button not found...\n    at Context.it (dist\\tests\\samplefail.test.js:15:16)\n    at process._tickCallback (internal/process/next_tick.js:68:7)",
+                "message": "AssertionError: 'Google Search' button not found.",
+                "estack": "AssertionError: 'Google Search' button not found.\n    at D:\\RnD\\testFrameworks\\WebDriverJS-Boilerplate\\dist\\tests\\samplefail.test.js:24:16\n    at Generator.next (<anonymous>)\n    at fulfilled (dist\\tests\\samplefail.test.js:5:58)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
                 "diff": null
               },
-              "uuid": "b2b05519-322b-46a7-a1b5-7da50f9b6293",
-              "parentUUID": "e6ad8e53-e1ac-4986-9aec-e4e43af4e972",
+              "uuid": "0c92c4f1-f7fc-495b-8590-c40f60485532",
+              "parentUUID": "ed52b43f-9e85-4cb8-9d16-893cd540ac68",
               "isHook": false,
               "skipped": false
             }
@@ -193,14 +193,14 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "b2b05519-322b-46a7-a1b5-7da50f9b6293"
+            "0c92c4f1-f7fc-495b-8590-c40f60485532"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 837,
+          "duration": 516,
           "root": false,
           "rootEmpty": false,
-          "_timeout": 2000000
+          "_timeout": 20000
         }
       ],
       "passes": [],
@@ -210,12 +210,12 @@
       "duration": 0,
       "root": true,
       "rootEmpty": true,
-      "_timeout": 2000000
+      "_timeout": 20000
     }
   ],
   "meta": {
     "mocha": {
-      "version": "8.0.1"
+      "version": "8.4.0"
     },
     "mochawesome": {
       "options": {
@@ -227,11 +227,11 @@
         "useInlineDiffs": false,
         "code": true
       },
-      "version": "6.1.1"
+      "version": "6.2.2"
     },
     "marge": {
       "options": null,
-      "version": "5.1.0"
+      "version": "5.2.0"
     }
   }
 }

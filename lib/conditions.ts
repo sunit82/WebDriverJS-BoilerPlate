@@ -7,7 +7,7 @@ export function elementIsVisible(locator: () => WebComponent): WaitCondition {
 }
 
 export function elementIsPresent(locator: () => WebComponent): WaitCondition {
-  return async () => locator() !== undefined;
+  return async () => await locator() !== undefined;
 }
 
 export function pageHasLoaded<T extends Page>(page: NewablePage<T>): WaitCondition {
